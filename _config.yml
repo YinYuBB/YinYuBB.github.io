@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Yu Yin's Personal Homepage"
+title                    : "Yu Yin's Homepage"
 title_separator          : "-"
 name                     : &name "Yu Yin"
 description              : &description "A postgraduate student from Imperial College London"
