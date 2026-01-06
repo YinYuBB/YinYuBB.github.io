@@ -34,7 +34,7 @@
   color: mix(#fff, $gray, 25%);
   border-bottom: 1px solid $border-color;
 
-  + .list__item .archive__item-title {
+  +.list__item .archive__item-title {
     margin-top: 0.5em;
   }
 }
@@ -43,7 +43,7 @@
   margin-bottom: 0.25em;
   font-family: $sans-serif-narrow;
 
-  a + a {
+  a+a {
     opacity: 0.5;
   }
 }
@@ -61,7 +61,7 @@
   margin-top: 0;
   font-size: $type-size-6;
 
-  & + p {
+  &+p {
     text-indent: 0;
   }
 }
@@ -69,6 +69,7 @@
 .archive__item-teaser {
   border-radius: $border-radius;
   overflow: hidden;
+
   img {
     width: 100%;
   }
@@ -130,14 +131,17 @@
 
   @include breakpoint($small) {
     @include gallery(5 of 10);
+
     .archive__item-teaser {
       max-height: 200px;
     }
   }
 
   @include breakpoint($medium) {
-    margin-left: 0; /* reset before mixin does its thing*/
-    margin-right: 0; /* reset before mixin does its thing*/
+    margin-left: 0;
+    /* reset before mixin does its thing*/
+    margin-right: 0;
+    /* reset before mixin does its thing*/
     @include gallery(2.5 of 10);
 
     .archive__item-teaser {
@@ -243,3 +247,150 @@
     }
   }
 }
+
+/* ==========================================
+   Best Practice: Clean Academic List
+   ========================================== */
+
+.publication-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 25px; /* 增加间距，更大气 */
+  margin-bottom: 25px;
+  padding: 20px;
+  
+  /* 卡片整体：纯白背景，极淡的轮廓 */
+  background: #ffffff !important;
+  border: 1px solid #f0f0f0 !important;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.publication-container:hover {
+  transform: translateY(-2px);
+  /* 悬停时加深阴影，增加层次感 */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05); 
+  border-color: #e0e0e0 !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .publication-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* --- 图片区域：隐形容器 --- */
+.publication-image {
+  flex-shrink: 0;
+  /* 固定占用空间，保证左侧对齐 */
+  width: 280px !important; 
+  height: 160px !important; 
+  
+  /* ★ 关键修复：背景强制纯白，去掉灰色留白 ★ */
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  
+  /* 去掉容器边框，让图片自由悬浮 */
+  border: none !important; 
+  padding: 0 !important;
+  
+  /* 让图片在空间内居中 */
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .publication-image {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16/9;
+  }
+}
+
+/* --- 图片本体 --- */
+.publication-image img {
+  width: 100% !important;
+  height: 100% !important;
+  
+  /* 完整显示，不裁剪 */
+  object-fit: contain !important; 
+  
+  /* 给图片本身加一点点阴影和圆角，让它从白色背景中跳出来 */
+  border-radius: 4px;
+  /* 可选：如果你觉得图片太白了和背景混在一起，可以取消注释下面这行加个边框 */
+  /* border: 1px solid #f0f0f0; */
+  
+  display: block;
+}
+
+/* --- 右侧文字 (保持精致感) --- */
+.publication-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.publication-title {
+  font-size: 1.1rem !important;
+  font-weight: 700;
+  color: #1a5490;
+  margin: 0 0 6px 0 !important;
+  line-height: 1.3;
+}
+.publication-title a { text-decoration: none; color: inherit; }
+.publication-title a:hover { text-decoration: underline; }
+
+.publication-meta {
+  font-size: 0.85rem !important;
+  color: #666;
+  margin-bottom: 8px !important;
+}
+
+.publication-tags {
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.publication-tags .tag {
+  font-size: 0.7rem !important;
+  padding: 1px 8px;
+  background-color: #f1f8ff;
+  color: #0366d6;
+  border-radius: 12px;
+  font-weight: 500;
+  border: 1px solid #ddeeff;
+}
+
+.publication-abstract {
+  font-size: 0.85rem !important;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 12px !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 限制2行，更整洁 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.publication-links {
+  display: flex;
+  gap: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #f9f9f9;
+}
+.publication-links a {
+  font-size: 0.8rem !important;
+  font-weight: 600;
+  color: #586069;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.publication-links a:hover { color: #0366d6; }

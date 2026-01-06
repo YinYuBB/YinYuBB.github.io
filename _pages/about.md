@@ -7,8 +7,19 @@ redirect_from:
   - /about.html
 ---
 
-I'm a postgraduate student at [Imperial College London](https://www.imperial.ac.uk/). I received my Bachelor's degree from the [University of Liverpool](https://www.liverpool.ac.uk/), supervised by [Dr. Meng Fang](https://mengf1.github.io/). I am also currently doing a remote research intern at School of Biomedical Informatics and Data Science of [Yale University](https://www.yale.edu/), supervised by [Dr. Qingyu Chen](https://medicine.yale.edu/profile/qingyu-chen/).
+I'm a first-year PhD student at University of Queensland, supervised by [Prof. Guido Zuccon](https://ielab.io/people/guido-zuccon.html).
 
-My academic focus is on biomedical text mining and information retrieval, multimodal analysis of large language models, and artificial intelligence-assisted biomedical applications.
+## **Education**
+- PhD in Computer Science, University of Queensland (2026–present)
+- Master's in Computer Science, Imperial College London (2023–2024), supervised by [Dr. Qingyu Chen](https://medicine.yale.edu/profile/qingyu-chen/)
+- Bachelor's in Computer Science, Xi'an Jiaotong-Liverpool University and University of Liverpool (2019–2023), supervised by [Dr. Meng Fang](https://mengfn.github.io/)
 
-You can find my CV here: [Yu Yin's CV](../assets/Yu_Yin_CV.pdf).
+## **Work Experience**
+- Research Assistant, School of Biomedical Informatics and Data Science, Yale University (2024–2025), supervised by [Dr. Qingyu Chen](https://medicine.yale.edu/profile/qingyu-chen/)
+
+## **Academic Activities**
+- Volunteer, [EMNLP 2025](https://2025.emnlp.org/), Suzhou
+
+## **Research Interests**
+
+My research focuses on information retrieval, multimodal analysis of large language models, and artificial intelligence-assisted biomedical applications.
