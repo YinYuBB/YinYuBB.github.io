@@ -17,8 +17,10 @@ I'm a first-year PhD student at University of Queensland, supervised by [Prof. G
 ## **Work Experience**
 - Research Assistant, School of Biomedical Informatics and Data Science, Yale University (2024–2025), supervised by [Dr. Qingyu Chen](https://medicine.yale.edu/profile/qingyu-chen/)
 
-## **Academic Activities**
-- Volunteer, [EMNLP 2025](https://2025.emnlp.org/), Suzhou
+## **Academic Services**
+- Conference reviewer — ACL
+- Journal reviewer — ACM Trans. on Computing for Healthcare
+- Volunteer, EMNLP 2025, Suzhou
 
 ## **Research Interests**
 
