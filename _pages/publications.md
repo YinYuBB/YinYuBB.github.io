@@ -10,15 +10,7 @@ author_profile: true
 <div class="publications-list">
   {% for post in site.publications reversed %}
     <div class="publication-container">
-      
-      <div class="publication-image">
-        {% if post.image %}
-          <img src="{{ post.image | prepend: base_path }}" alt="{{ post.title }}">
-        {% else %}
-          <div style="color:#ddd; font-size:0.8rem;"></div>
-        {% endif %}
-      </div>
-      
+
       <div class="publication-content">
         <h3 class="publication-title">{{ post.title }}</h3>
         

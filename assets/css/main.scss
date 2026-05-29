@@ -47,13 +47,11 @@
 
 .publication-container {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 25px; /* 增加间距，更大气 */
+  flex-direction: column;        /* 垂直堆叠：图在上，文字在下 */
+  gap: 16px;
   margin-bottom: 25px;
   padding: 20px;
-  
-  /* 卡片整体：纯白背景，极淡的轮廓 */
+
   background: #ffffff !important;
   border: 1px solid #f0f0f0 !important;
   border-radius: 8px;
@@ -62,79 +60,18 @@
 
 .publication-container:hover {
   transform: translateY(-2px);
-  /* 悬停时加深阴影，增加层次感 */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05); 
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   border-color: #e0e0e0 !important;
 }
 
-/* 移动端适配 */
-@media (max-width: 768px) {
-  .publication-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-}
-
-/* --- 图片区域：隐形容器 (父级) --- */
-.publication-image {
-  flex-shrink: 0;
-  /* 固定占用空间 */
-  width: 280px !important; 
-  height: 160px !important; 
-  
-  background-color: #ffffff !important;
-  
-  /* 去掉边框和内边距 */
-  border: none !important; 
-  padding: 0 !important;
-  
-  /* ★ 关键 1：开启 Flex 布局并强制居中 ★ */
-  display: flex !important;
-  justify-content: center !important; /* 水平居中 */
-  align-items: center !important;     /* 垂直居中 */
-  
-  overflow: hidden; /* 防止超大图片溢出 */
-}
-
-/* 移动端适配 */
-@media (max-width: 768px) {
-  .publication-image {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 16/9;
-  }
-}
-
-/* --- 图片本体 (子级) --- */
-.publication-image img {
-  /* ★ 关键 2：让图片保持自然比例，不要强制拉伸 ★ */
-  width: auto !important;
-  height: auto !important;
-  
-  /* ★ 关键 3：限制最大尺寸，永远不要超过容器 ★ */
-  max-width: 100% !important;
-  max-height: 100% !important;
-  
-  /* ★ 关键 4：利用 margin 自动修正任何剩余的对齐偏差 ★ */
-  margin: auto !important;
-  
-  display: block !important;
-  border-radius: 4px;
-  
-  /* 阴影可选 */
-  /* box-shadow: 0 2px 5px rgba(0,0,0,0.05); */
-}
-
-/* --- 右侧文字 (保持精致感) --- */
 /* =======================================================
-   右侧文字内容区域
+   文字内容区域
    ======================================================= */
 .publication-content {
-  flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* 保证内容从上到下排列 */
+  justify-content: flex-start;
 }
 
 /* 1. 标题 (层级最高，最显眼) */
@@ -225,7 +162,34 @@
   gap: 5px;
   transition: color 0.2s;
 }
-.publication-links a:hover { 
-  color: #0366d6; 
+.publication-links a:hover {
+  color: #0366d6;
   text-decoration: none;
 }
+
+/* ==========================================
+   Recent News list (home page) — numbered feed
+   ========================================== */
+ol.news-list {
+  list-style: decimal outside;
+  padding-left: 1.8em;       /* room for the auto-numbers */
+  margin: 0 0 1.2em 0;
+  max-height: 280px;         /* compact; scroll if longer */
+  overflow-y: auto;
+}
+
+ol.news-list > li.news-item {
+  padding: 4px 0;
+  line-height: 1.55;
+  color: #333;
+}
+
+.news-date {
+  font-weight: 600;
+  color: #1a5490;
+  font-variant-numeric: tabular-nums;
+  margin-right: 4px;
+}
+
+.news-list a { color: #0366d6; text-decoration: none; }
+.news-list a:hover { text-decoration: underline; }

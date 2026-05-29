@@ -1,0 +1,9 @@
+# News entries shown on the home page, newest first.
+# Each entry:
+#   date:    YYYY-MM-DD  (rendered as [YYYY.MM.DD], used for sorting)
+#   content: free-form HTML — paper titles in straight quotes, links as <a href>
+# Tip: wrap first-author/highlight phrases in <b>...</b>.
+
+- date: 2026-04-03
+  content: '<b>Our paper</b> &ldquo;The Vulnerability of LLM Rankers to Prompt Injection Attacks&rdquo; was accepted by <b>SIGIR 2026</b>.'
+

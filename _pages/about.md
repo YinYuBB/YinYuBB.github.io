@@ -7,7 +7,18 @@ redirect_from:
   - /about.html
 ---
 
-I'm a first-year PhD student at University of Queensland, supervised by [Prof. Guido Zuccon](https://ielab.io/people/guido-zuccon.html).
+I'm a first-year PhD student at the University of Queensland, working under the guidance of [Prof. Guido Zuccon](https://about.uq.edu.au/experts/22857), [Assoc. Prof. Bevan Koopman](https://bevankoopman.github.io/), and [Dr. Shuai Wang](https://wshuai190.github.io/). My research sits at the intersection of information retrieval, large language models, and biomedical applications.
+
+## **Recent News**
+
+<ol class="news-list">
+{% assign news = site.data.news | sort: 'date' | reverse %}
+{% for item in news %}
+  <li class="news-item">
+    <span class="news-date">[{{ item.date | date: "%Y.%m.%d" }}]</span> {{ item.content }}
+  </li>
+{% endfor %}
+</ol>
 
 ## **Education**
 - PhD in Computer Science, University of Queensland (2026–present)
